@@ -21,7 +21,12 @@ accepts updates signed with the project's updater key.
 ## Renamed from meeting-recorder
 
 Up to 0.2.0 the cask was called `meeting-recorder`. `brew update` moves an existing install to the
-new name. The app keeps your data and its macOS permissions.
+new name. The app keeps your data and its macOS permissions. If you trusted only the old cask rather
+than the tap, Homebrew refuses the new name until you trust it too:
+
+```sh
+brew trust --cask akaike-akshay-t/mrec/mrec
+```
 
 ## Upgrading from 0.1
 
