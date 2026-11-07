@@ -1,9 +1,9 @@
-cask "meeting-recorder" do
-  version "0.2.0"
-  sha256 "02d417980d00ae92c9df46e75da7b4237076dfa08cd0064ab71ab8ce5c1686ba"
+cask "mrec" do
+  version "0.2.1"
+  sha256 "1cb23cfe1fd0eb3fa7c022be8921593b7ac76c0eda149ce6a47a7a5e7f9ea968"
 
-  url "https://github.com/akaike-akshay-t/homebrew-mrec/releases/download/v#{version}/Meeting-Recorder_#{version}_aarch64.zip"
-  name "Meeting Recorder"
+  url "https://github.com/akaike-akshay-t/homebrew-mrec/releases/download/v#{version}/mrec_#{version}_aarch64.zip"
+  name "mrec"
   desc "Local meeting recording, transcription and pi-powered notes"
   homepage "https://github.com/akaike-akshay-t/homebrew-mrec"
 
@@ -13,15 +13,15 @@ cask "meeting-recorder" do
   depends_on arch: :arm64
   depends_on macos: :sonoma
 
-  app "Meeting Recorder.app"
-  binary "#{appdir}/Meeting Recorder.app/Contents/MacOS/mrec"
+  app "mrec.app"
+  binary "#{appdir}/mrec.app/Contents/MacOS/mrec"
 
   # Signed with the project's own certificate and not notarized, so Gatekeeper would refuse a
   # quarantined copy. Trust comes from this cask's checksum, and the in-app updater accepts only
   # updates signed with the project's updater key.
   postflight_steps do
     run "/usr/bin/xattr",
-        args:         ["-d", "-r", "com.apple.quarantine", "{{appdir}}/Meeting Recorder.app"],
+        args:         ["-d", "-r", "com.apple.quarantine", "{{appdir}}/mrec.app"],
         must_succeed: false
   end
 
