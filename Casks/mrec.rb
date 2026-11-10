@@ -1,6 +1,6 @@
 cask "mrec" do
-  version "0.2.2"
-  sha256 "7f1ffef613a693c92db0ea349637488189c478f82ba367fd46f3ed4408a1f4d5"
+  version "0.2.3"
+  sha256 "9d85556825c0a622e5f5240635471e584e3da1d5ccf2171c5f2e2e542577d4b2"
 
   url "https://github.com/akaike-akshay-t/homebrew-mrec/releases/download/v#{version}/mrec_#{version}_aarch64.zip"
   name "mrec"
